@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Prerequisite List";
+}
+
+
+@Html.Partial("SharedPrerequisiteList")
+<script type="text/html" id="action-template">
+    <!-- in the template, $data is each element of the viewModel which contains "id" -->
+    <a data-bind="attr: { href : '/Admin/EditPrerequisite?id=' + id, title: 'edit' }">edit</a>
+    <a data-bind="DeletePrerequisite: $data">delete</a>
+</script>
+
+<script type="text/html" id="action-template2">
+    <!-- in the template, $data is each element of the viewModel which contains "id" -->
+
+    <a data-bind="attr: { href : '/Admin/InsertPrerequisite', title: 'insert' }">Add new prerequisite</a>
+</script>

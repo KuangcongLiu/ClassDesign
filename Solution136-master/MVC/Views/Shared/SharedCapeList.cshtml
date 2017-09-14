@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Cape List";
+}
+<h3>Cape List Page</h3>
+<div id="divSharedCapeList">
+    <table>
+        <thead>
+            <tr>
+                <th>Cape Id</th>
+                <th>Schedule Id</th>
+                <th>Rate</th>
+                <th>Cape Description</th>
+                <th>Student Id</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: viewModel">
+            <tr>
+                <td data-bind="text: cape_id"></td>
+                <td data-bind="text: schedule_id"></td>
+                <td data-bind="text: rate"></td>
+                <td data-bind="text: cape_description"></td>
+                <td data-bind="text: student_id"></td>
+                <td>
+                    <!-- Note, this is an example using knockout templating. $data is the keyword
+                        to for each element of the viewModel array -->
+                    <div data-bind="template: { name: 'action-template', data: $data}"></div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div data-bind="template: { name: 'action-template2', data: $data}"></div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var capeViewModelObj = new CapeViewModel();
+        capeViewModelObj.GetCapeList();
+    });
+</script>
+

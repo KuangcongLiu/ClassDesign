@@ -1,0 +1,7 @@
+﻿@{
+    ViewBag.Title = "Department List";
+    var student_id = ViewBag.student_id
+}
+
+<a href="/Student/Index?student_id=@student_id"><< back</a>
+@Html.Partial("SharedDepartmentList")

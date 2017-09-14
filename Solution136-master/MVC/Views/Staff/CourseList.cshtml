@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Course List";
+}
+
+
+<a href="/Staff/Index"><< back</a>
+@Html.Partial("SharedCourseList")
+<script type="text/html" id="action-template">
+    <!-- in the template, $data is each element of the viewModel which contains "id" -->
+    <a data-bind="attr: { href : '/Staff/EditCourse?course_id=' + course_id, title: 'edit' }">edit</a>
+</script>
+
+<script type="text/html" id="action-template2">
+    <!-- in the template, $data is each element of the viewModel which contains "id" -->
+
+    <a data-bind="attr: { href : '/Staff/InsertCourse', title: 'insert' }">Add new course</a>
+</script>

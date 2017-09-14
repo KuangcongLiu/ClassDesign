@@ -1,0 +1,8 @@
+﻿@{
+    ViewBag.Title = "Edit Cape";
+    var cape_id = ViewBag.cape_id;
+    var student_id = ViewBag.student_id;
+}
+
+<a href="/Student/CapeList?student_id=@student_id"><< back</a>
+@Html.Partial("SharedEditCape")

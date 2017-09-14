@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Admin";
+    var admin_id = ViewBag.admin_id;
+}
+<h2>Welcome admin</h2>
+
+<ul>
+    <li><a href="~/Admin/Edit?admin_id=@admin_id">Edit my info</a></li>
+    <li><a href="~/Admin/StudentList">Manage All Students</a></li>
+    <li><a href="~/Admin/CapeList">Manage All Capes</a></li>
+    <li><a href="~/Admin/CourseList">Manage All Courses</a></li>
+    <li><a href="~/Admin/DepartmentList">Manage All Departments</a></li>
+    <li><a href="~/Admin/PrerequisiteList">Manage All Prerequisites</a></li>
+    <li><a href="~/Admin/AllEnrollmentList">Manage All Enrollment</a></li>
+    <li><a href="~/Admin/ScheduleList">Manage All Schedule</a></li>
+
+</ul>

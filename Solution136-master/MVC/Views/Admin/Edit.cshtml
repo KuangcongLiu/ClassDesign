@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Edit";
+    var admin_id = ViewBag.admin_id;
+}
+<h2>Edit</h2>
+
+<div id="divEditAdmin">
+    Email : <input type="text" data-bind="value: $data.email" /><br />
+    <br />
+    Password : <input type="text" data-bind="value: $data.password" /><br />
+    <br />
+    <input type="button" data-bind="value: 'Update', click: $data.update" style="margin-left:80px" />
+    <br /><br />
+    <div id="divMessage"></div>    
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var adminViewModelObj = new AdminViewModel();
+        adminViewModelObj.Load(@admin_id);
+    });
+
+</script>

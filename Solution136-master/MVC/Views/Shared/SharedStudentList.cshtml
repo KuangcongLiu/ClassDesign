@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "GetStudents";
+}
+<h3>Student List Page</h3>
+<div id="divSharedStudentList">
+    <table>
+        <thead>
+            <tr>
+                <th>Student Id</th>
+                <th>First</th>
+                <th>Last</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Shoe_size</th>
+                <th>Weight</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: viewModel">
+            <tr>
+                <td data-bind="text: student_id"></td>
+                <td data-bind="text: first"></td>
+                <td data-bind="text: last"></td>
+                <td data-bind="text: email"></td>
+                <td data-bind="text: password"></td>
+                <td data-bind="text: shoe_size"></td>
+                <td data-bind="text: weight"></td>
+                <td>
+                    <!-- Note, this is an example using knockout templating. $data is the keyword
+                        to for each element of the viewModel array -->
+                    <div data-bind="template: { name: 'action-template', data: $data}"></div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+   <div data-bind="template: { name: 'action-template2', data: $data}"></div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var studentViewModelObj = new StudentViewModel();
+        studentViewModelObj.GetStudentList();
+    });
+</script>

@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Insert Student";
+    var student_id = ViewBag.student_id;
+    var schedule_id = ViewBag.schedule_id;
+}
+
+<a href="/Student/ScheduleList?student_id=@student_id"><< back</a>
+<h2>Insert Enrollment</h2>
+<div id="divInsertEnrollment">
+    <table>
+        <tr>
+            <td>Student Id</td>
+            <td data-bind="value: student_id"></td>
+        </tr>
+        <tr>
+            <td>Schedule Id</td>
+            <td data-bind="value: schedule_id"></td>
+        </tr>
+        <tr>
+            <td>Grade</td>
+            <td data-bind="value: grade"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button data-bind="click: add">Add New Enrollment</button></td>
+        </tr>
+    </table>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var viewModel = new EnrollmentViewModel();
+        viewModel.Initialize();
+    });
+
+</script>

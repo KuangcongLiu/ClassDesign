@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Staff";
+    var staff_id = ViewBag.staff_id;
+}
+
+<h2>Staff</h2>
+
+<p>What does a staff able to do?</p>
+<ul>
+    <li><a href="~/Staff/Edit?staff_id=@ViewBag.staff_id">Edit my info</a></li>
+    <li><a href="~/Staff/StudentList">Manage All Students</a></li>
+    <li><a href="~/Staff/CapeList">Manage All Capes</a></li>
+    <li><a href="~/Staff/CourseList">Manage All Courses</a></li>
+    <li><a href="~/Staff/DepartmentList">Manage All Departments</a></li>
+    <li><a href="~/Staff/PrerequisiteList">Manage All Prerequisites</a></li>
+    <li><a href="~/Staff/AllEnrollmentList">Manage All Enrollments</a></li>
+    <li><a href="~/Staff/ScheduleList">Manage All Schedule</a></li>
+</ul>

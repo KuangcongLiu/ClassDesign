@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Department List";
+}
+
+@Html.Partial("SharedDepartmentList")
+<script type="text/html" id="action-template">
+    <!-- in the template, $data is each element of the viewModel which contains "id" -->
+    <a data-bind="attr: { href : '/Staff/EditDepartment?department_id=' + department_id, title: 'edit' }">edit</a>
+</script>
+
+<script type="text/html" id="action-template2">
+    <!-- in the template, $data is each element of the viewModel which contains "id" -->
+
+    <a data-bind="attr: { href : '/Staff/InsertDepartment', title: 'insert' }">Add new department</a>
+</script>

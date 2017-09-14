@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Student List";
+}
+
+
+@Html.Partial("SharedStudentList")
+
+
+
+<script type="text/html" id="action-template">
+    <!-- in the template, $data is each element of the viewModel which contains "id" -->
+    <a data-bind="attr: { href : '/Admin/EditStudent?student_id=' + student_id, title: 'edit' }">edit</a>
+    <a data-bind="DeleteStudent: $data">delete</a>
+</script>
+
+<script type="text/html" id="action-template2">
+    <!-- in the template, $data is each element of the viewModel which contains "id" -->
+
+    <a data-bind="attr: { href : '/Admin/InsertStudent', title: 'insert' }">Add new student</a>
+</script>
+
+

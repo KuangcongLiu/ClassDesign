@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "";
+    var student_id = ViewBag.student_id;
+    var schedule_id = ViewBag.schedule_id;
+}
+<h2>Edit Enrollment</h2>
+<div id="divSharedEditEnrollment">
+
+    Grade : <input type="text" data-bind="value: $data.grade" /><br />
+    <br />
+    <input type="button" data-bind="value: 'Update', click: $data.update" style="margin-left:80px" />    <br/><br/>
+    <div id="divMessage"></div>
+
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var enrollmentViewModelObj = new EnrollmentViewModel();
+        enrollmentViewModelObj.Load('@student_id', @schedule_id);
+    });
+
+</script>

@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Insert Enrollment";
+}
+<h2>Insert Enrollment</h2>
+<div id="divInsertEnrollment">
+    Student Id : <input type="text" data-bind="value: student_id" /><br />
+    <br />
+    Schedule Id : <input type="text" data-bind="value: schedule_id" /><br />
+    <br />
+    Grade : <input type="text" data-bind="value: grade" /><br />
+    <br />
+    <input type="button" data-bind="value: 'Insert', click: $data.add" style="margin-left:80px" />
+    <br /><br />
+    <div id="divMessage"></div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var enrollmentViewModelObj = new EnrollmentViewModel();
+        enrollmentViewModelObj.Initialize();
+    });
+
+</script>

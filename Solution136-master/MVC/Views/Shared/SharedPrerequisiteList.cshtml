@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Prerequisite List";
+
+}
+<h3>Prerequisite List Page</h3>
+<div id="divSharedPrerequisiteList">
+    <table>
+        <thead>
+            <tr>
+                <th>Id </th>
+                <th>Coure Id </th>
+                <th>Prerequisite Id </th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: viewModel">
+            <tr>
+                <td data-bind="text: id"></td>
+                <td data-bind="text: course_id"></td>
+                <td data-bind="text: prerequisite_id"></td>
+                <td>
+                    <!-- Note, this is an example using knockout templating. $data is the keyword
+         to for each element of the viewModel array -->
+                    <div data-bind="template: { name: 'action-template', data: $data}"></div>
+                </td>
+            </tr>
+            
+        </tbody>
+    </table>
+    <div data-bind="template: { name: 'action-template2', data: $data}"></div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var prerequisiteViewModelObj = new PrerequisiteViewModel();
+        prerequisiteViewModelObj.GetPrerequisiteList();
+    });
+</script>

@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Enrollment List";
+}
+
+
+@Html.Partial("SharedEnrollmentList")
+<script type="text/html" id="action-template">
+    <!-- in the template, $data is each element of the viewModel which contains "id" -->
+    <a data-bind="attr: { href : '/Admin/EditEnrollment?schedule_id=' + schedule_id + '&student_id='+student_id, title: 'edit' }">edit</a>
+    <a data-bind="DeleteEnrollment: $data">delete</a>
+
+</script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var enrollmentViewModelObj = new EnrollmentViewModel();
+        enrollmentViewModelObj.GetAllEnrollment();
+    });
+</script>

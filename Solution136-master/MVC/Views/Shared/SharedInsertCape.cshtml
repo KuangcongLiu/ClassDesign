@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Insert Cape";
+}
+<h2>Insert Cape</h2>
+<div id="divSharedInsertCape">
+    Cape Id : <input type="text" data-bind="value: $data.cape_id" /><br />
+    <br />
+    Schedule Id : <input type="text" data-bind="value: $data.schedule_id" /><br />
+    <br />
+    Rate : <input type="text" data-bind="value: $data.rate" /><br />
+    <br />
+    Description : <input type="text" data-bind="value: $data.cape_description" /><br />
+    <br />
+    Student Id: <input type="text" data-bind="value: $data.student_id" /><br />
+    <br />
+    <input type="button" data-bind="value: 'Insert', click: $data.add" style="margin-left:80px" />
+    <br /><br />
+    <div id="divMessage"></div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var capeViewModelObj = new CapeViewModel();
+        capeViewModelObj.Initialize();
+    });
+
+</script>

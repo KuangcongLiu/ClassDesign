@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Edit Department";
+    var department_id = ViewBag.department_id;
+}
+<h2>Edit Department</h2>
+<div id="divSharedEditDepartment">
+
+    Department Name : <input type="text" data-bind="value: $data.department_name" /><br />
+    <br />
+    Department Description : <input type="text" data-bind="value: $data.department_description" /><br />
+    <br />
+    <input type="button" data-bind="value: 'Update', click: $data.update" style="margin-left:80px" />
+    <br /><br />
+    <div id="divMessage"></div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var departmentViewModelObj = new DepartmentViewModel();
+        departmentViewModelObj.Load(@department_id);
+    });
+
+</script>

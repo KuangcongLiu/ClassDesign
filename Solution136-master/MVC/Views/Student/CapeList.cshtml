@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Cape List";
+    var student_id = ViewBag.student_id;
+}
+<a href="/Student/Index?student_id=@student_id"><< back</a>
+
+@Html.Partial("SharedCapeList")]
+
+<script type="text/html" id="action-template">
+    <!-- in the template, $data is each element of the viewModel which contains "id" -->
+    <a data-bind="attr: { href : '/Student/EditCape?cape_id=' + cape_id+'&student_id'+student_id, title: 'edit' }">edit</a>
+    <a data-bind="DeleteCape: $data">delete</a></script>
+
+<script type="text/html" id="action-template2">
+    <!-- in the template, $data is each element of the viewModel which contains "id" -->
+
+    <a data-bind="attr: { href : '/Student/InsertCape', title: 'insert' }">Add new cape</a>
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var studentViewModelObj = new StudentViewModel();
+        studentViewModelObj.GetAll();
+    });
+</script>

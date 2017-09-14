@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Schedule List";
+    var student_id = ViewBag.student_id;
+}
+<a href="/Student/Index?student_id=@student_id"><< back</a>
+
+@Html.Partial("SharedScheduleList")
+
+
+
+<script type="text/html" id="action-template">
+    <!-- in the template, $data is each element of the viewModel which contains "id" -->
+    <a data-bind="attr: { href : '/Student/InsertEnrollment?schedule_id=' + schedule_id+'&student_id'+student_id, title: 'insert' }">Add Course to Enrollment</a>
+</script>
+
+
+

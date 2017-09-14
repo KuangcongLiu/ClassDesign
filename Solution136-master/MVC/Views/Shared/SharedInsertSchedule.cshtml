@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Insert Schedule";
+}
+<h2>Insert Schedule</h2>
+<div id="divSharedInsertSchedule">
+    Schedule Id : <input type="text" data-bind="value: $data.schedule_id" /><br />
+    <br />
+    Course Id : <input type="text" data-bind="value: $data.course_id" /><br />
+    <br />
+    Year : <input type="text" data-bind="value: $data.year" /><br />
+    <br />
+    Quarter : <input type="text" data-bind="value: $data.quarter" /><br />
+    <br />
+    Session : <input type="text" data-bind="value: $data.session" /><br />
+    <br />
+    Schedule Day Id : <input type="text" data-bind="value: $data.schedule_day_id" /><br />
+    <br />
+    Schedule Time Id : <input type="text" data-bind="value: $data.schedule_time_id" /><br />
+    <br />
+    Instructor Id : <input type="text" data-bind="value: $data.instructor_id" /><br />
+    <br />
+    <input type="button" data-bind="value: 'Insert', click: $data.add" style="margin-left:80px" />
+    <br /><br />
+    <div id="divMessage"></div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var scheduleViewModelObj = new ScheduleViewModel();
+        scheduleViewModelObj.Initialize();
+    });
+
+</script>

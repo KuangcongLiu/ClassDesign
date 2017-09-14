@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Edit Prerequisite";
+    var id = ViewBag.id;
+}
+
+<h2>Edit Prerequisite</h2>
+<div id="divSharedEditPreresuisite">
+    Course Id : <input type="text" data-bind="value: $data.course_id" /><br />
+    <br />
+    Prerequisite Id : <input type="text" data-bind="value: $data.prerequisite_id" /><br />
+    <br />
+    <input type="button" data-bind="value: 'Update', click: $data.update" style="margin-left:80px" />
+    <br /><br />
+    <div id="divMessage"></div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var prerequisiteViewModelObj = new PrerequisiteViewModel();
+        prerequisiteViewModelObj.Load(@id);
+    });
+
+</script>

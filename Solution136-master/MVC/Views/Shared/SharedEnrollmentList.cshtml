@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Enrollment List";
+}
+<h3>Enrollment List Page</h3>
+<div id="divSharedEnrollmentList">
+    <table>
+        <thead>
+            <tr>
+                <th>Student Id </th>
+                <th>Schedule Id </th>
+                <th>Grade </th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: viewModel">
+            <tr>
+                <td data-bind="text: student_id"></td>
+                <td data-bind="text: schedule_id"></td>
+                <td data-bind="text: grade"></td>
+
+                <td>
+                    <!-- Note, this is an example using knockout templating. $data is the keyword
+                         to for each element of the viewModel array -->
+                    <div data-bind="template: { name: 'action-template', data: $data}"></div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

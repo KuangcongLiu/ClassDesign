@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Index";
+    var student_id = ViewBag.student_id;
+}
+
+<h2>Student Detail</h2>
+<ul>
+    <li><a href="/Student/Edit?student_id=@student_id">Edit my info</a></li>
+    <li><a href="~/Student/EnrollmentList?student_id=@student_id">Manage My Enrollment</a></li>
+    <li><a href="~/Student/ScheduleList?student_id=@student_id">Show Schedule List</a></li>
+    <li><a href="~/Student/CourseList?student_id=@student_id">Show All Course</a></li>
+    <li><a href="~/Student/DepartmentList?student_id=@student_id">Show All Department</a></li>
+    <li><a href="~/Student/PrerequisiteList?student_id=@student_id">Show All Prerequisite</a></li>
+    <li><a href="~/Student/CapeList?student_id=@student_id">Manage My Cape</a></li>
+</ul>
+
+

@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Cape List";
+}
+@Html.Partial("SharedCapeList")]
+
+<script type="text/html" id="action-template">
+    <!-- in the template, $data is each element of the viewModel which contains "id" -->
+    <a data-bind="attr: { href : '/Admin/EditCape?cape_id=' + cape_id, title: 'edit' }">edit</a>
+    <a data-bind="DeleteCape: $data">delete</a>
+</script>
+
+<script type="text/html" id="action-template2">
+    <!-- in the template, $data is each element of the viewModel which contains "id" -->
+
+    <a data-bind="attr: { href : '/Admin/InsertCape', title: 'insert' }">Add new cape</a>
+</script>
+

@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Edit Course";
+    var course_id = ViewBag.course_id;
+}
+
+<h2>Edit Course</h2>
+<div id="divSharedEditCourse">
+    Course Name : <input type="text" data-bind="value: $data.title" /><br />
+    <br />
+    Course Level : <input type="text" data-bind="value: $data.course_level" /><br />
+    <br />
+    Description : <input type="text" data-bind="value: $data.description" /><br />
+    <br />
+    Department Id: <input type="text" data-bind="value: $data.department_id" /><br />
+    <br />
+    <input type="button" data-bind="value: 'Update', click: $data.update" style="margin-left:80px" />
+    <br /><br />
+    <div id="divMessage"></div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var courseViewModelObj = new CourseViewModel();
+        courseViewModelObj.Load(@course_id);
+    });
+
+</script>

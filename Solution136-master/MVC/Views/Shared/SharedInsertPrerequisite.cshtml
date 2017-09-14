@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Insert Prerequisite";
+}
+
+<h2>Insert Prerequisite</h2>
+<div id="divSharedInsertPrerequisite">
+    Id : <input type="text" data-bind="value: id " /><br />
+    <br />
+    Course Id : <input type="text" data-bind="value: course_id " /><br />
+    <br />
+    Prerequisite Id : <input type="text" data-bind="value: prerequisite_id " /><br />
+    <br />
+    <input type="button" data-bind="value: 'Insert', click: $data.add" style="margin-left:80px" />
+    <br /><br />
+    <div id="divMessage"></div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var prerequisiteViewModelObj = new PrerequisiteViewModel();
+        prerequisiteViewModelObj.Initialize();
+    });
+
+</script>

@@ -7,7 +7,7 @@ This is a Enterprise-class Web Application designed in CSE 136 class in Universi
   <img src="./img/design.png" width="700" height="700">
 
 ## Pages
-There are total 10 pages in this application, each with different functions and different design.
+ The brief introduction of different pages, each with different functions and different designs.
 
 ###  1. Home Page
  This page provides links to the login page.
